@@ -185,8 +185,7 @@ const ProductList = () => {
                         <li>{item.name}</li>
                         <li>{item.price}</li>
                         <li>{item.company}</li>
-                        {/* <li>{item.categories && item.categories.length > 0 ? item.categories.join(', ') : 'No Categories'}</li> */}
-                     
+                        {/* <li>{item.categories && item.categories.length > 0 ? item.categories.join(', ') : 'No Categories'}</li> */}              
                         <button className="addCateory-button" onClick={() => navigate(`/addCateory/${item._id}`)}>addCateory</button>
 
                         <li>
@@ -198,10 +197,12 @@ const ProductList = () => {
                                 />
                             )}
                         </li>
+
                         <li>
                             <button className="delete-button" onClick={() => deleteProduct(item._id)}>Delete</button>
                             <button className="update-button" onClick={() => navigate(`/update/${item._id}`)}>Update</button>
                         </li>
+                        
                     </ul>
                 ))
             ) : (

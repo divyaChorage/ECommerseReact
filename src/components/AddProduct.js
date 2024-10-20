@@ -7,13 +7,13 @@ import React, { useState } from "react";
 const AddProduct = () => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
-    const [category, setCategory] = useState('');
+
     const [company, setCompany] = useState('');
     const [error, setError] = useState(false);
     const [image, setImage] = useState(null); // State for image
 
     const addProduct = async () => {
-        if (!name || !price || !category || !company || !image) {
+        if (!name || !price ||  !company || !image) {
             setError(true);
             return false;
         }
@@ -34,7 +34,7 @@ const AddProduct = () => {
             const formData = new FormData();
             formData.append('name', name);
             formData.append('price', price);
-            formData.append('category', category);
+        
             formData.append('company', company);
             formData.append('userId', userId);
             formData.append('image', image);
@@ -70,9 +70,7 @@ const AddProduct = () => {
             <input type="text" placeholder="Enter product price" value={price} onChange={(e) => setPrice(e.target.value)} />
             {error && !price && <span className="input_invalid">Enter valid price</span>}
             
-            <input type="text" placeholder="Enter product category" value={category} onChange={(e) => setCategory(e.target.value)} />
-            {error && !category && <span className="input_invalid">Enter valid category</span>}
-            
+       
             <input type="text" placeholder="Enter product company" value={company} onChange={(e) => setCompany(e.target.value)} />
             {error && !company && <span className="input_invalid">Enter valid company</span>}
             

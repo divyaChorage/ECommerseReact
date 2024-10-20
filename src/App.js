@@ -54,10 +54,13 @@ import UserDashboard from './components/UserDashBoard';
 import PrivateComponent from './components/PrivateComponent'
 import { Navigate } from 'react-router-dom';
 import Allproducts from './components/Allproducts';
-import CategoryProduct from './components/CategoryProduct';
 import AddCateory from './components/AddCateory';
-
-function App() {
+import CategoryList  from './components/AddCateory';
+import AllCatgories from './components/AllCatgories';
+import UpdateCategories from './components/UpdateCategories';
+import AllCateForProduct from './components/AllCateForProduct';
+import BuyNow from './components/BuyNow';
+function App() { 
   return (
     <div className="App">
       <BrowserRouter>
@@ -112,6 +115,54 @@ function App() {
               />
             }
           />
+          
+          <Route
+  path="/addCategory/:id/AllCategories"
+  element={
+    <PrivateComponent
+      adminComponent={<AllCatgories />} 
+      userComponent={<AllCatgories/>}
+    />
+  }
+/>
+
+
+
+<Route
+  path="/Allproducts/:id/AllCateForProduct"
+  element={
+    <PrivateComponent
+      adminComponent={<AllCateForProduct />} 
+      userComponent={<AllCateForProduct/>}
+    />
+  }
+/>
+
+<Route
+            path="/Allproducts/:productId/AllCateForProduct/:categoryId/BuyNow"
+            element={
+              <PrivateComponent
+                adminComponent={<BuyNow />} 
+                userComponent={<BuyNow />}
+              />
+            }
+          />
+
+<Route
+    path="/UpdateCategories/:id/:cateId"
+    element={
+        <PrivateComponent
+            adminComponent={<UpdateCategories />}
+            userComponent={<Navigate to="/admin" />}
+        />
+    }
+/>
+
+
+
+
+       
+
 
           <Route
             path="/products"
@@ -137,7 +188,7 @@ function App() {
             element={
               <PrivateComponent
                 adminComponent={<Navigate to="/adminDashboard" />}
-                userComponent={<CategoryProduct />}
+                userComponent={<CategoryList />}
               />
             }
           />

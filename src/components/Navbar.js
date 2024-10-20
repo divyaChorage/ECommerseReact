@@ -76,6 +76,7 @@ const Navbar = () => {
             {auth.isAdmin && <li><Link to="/products">Product List</Link></li>}
             {auth.isAdmin && <li><Link to="/update">Update Product</Link></li>}
             {auth.isAdmin && <li><Link to="/AddCateory">AddCateory Product</Link></li>}
+            {auth.isAdmin && <li><Link to="/AllCatgories">Allcategories</Link></li>}
             <li><Link to="/profile">Profile Page</Link></li>
             {!auth.isAdmin && <li><Link to="/Allproducts">All Products</Link></li>}
             <li><Link onClick={logout} to="/signup">Logout Page ({auth.name})</Link></li>

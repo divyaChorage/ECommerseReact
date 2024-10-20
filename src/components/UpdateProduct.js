@@ -46,6 +46,7 @@ const UpdateProduct = () => {
         if (image) {
             formData.append('image', image);
         }
+        console.log(image)
 
         try {
             let result = await fetch(`http://localhost:5000/product/${params.id}`, {

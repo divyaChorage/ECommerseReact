@@ -1,0 +1,76 @@
+.categories-container {
+    padding: 20px;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .category-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .category-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  h3 {
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  p {
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  .price {
+    color: red; /* Makes the price text red */
+    
+  }
+  
+  .category-actions {
+    margin-top: 15px;
+  }
+  
+  .btn-buy-now, .btn-add-cart {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    border: 2px solid orangered; /* Button border with color */
+  /* Slightly rounded corners */
+    background-color:orangered;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .btn-buy-now:hover, .btn-add-cart:hover {
+    background-color: #ea4329;
+    border-color: #ff651e; /* Hover border color */
+  }
+  
+  .btn-add-cart {
+    background-color: #961111;
+    border-color: #d51623; /* Green border for Add to Cart button */
+  }
+  
+  .btn-add-cart:hover {
+    background-color: #780808;
+    border-color: #e41d1d;
+  }
+  

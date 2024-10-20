@@ -26,7 +26,6 @@ const AllProducts = () => {
         // Handle the unexpected data structure appropriately, e.g., set an error state
       }
 
-      setProducts(data.map(product => ({ ...product, likes: product.likes || 0, comments: product.comments || [] })));
     };
 
     fetchProducts();
@@ -93,8 +92,11 @@ const AllProducts = () => {
 
   const handleImageClick = (productId) => {
     if (productId) {
+      console.log(productId,"product id  for  navigte  to acte from  all produ")
       
-      navigate(`/product/${productId}`);
+      
+      navigate(`/Allproducts/${productId}/AllCateForProduct`);
+
     } else {
       console.error("Product ID is undefined");
     }
